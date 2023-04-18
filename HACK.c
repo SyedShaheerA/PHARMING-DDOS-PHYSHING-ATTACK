@@ -13,7 +13,7 @@ int main(int args)
 	printf("4. Start phshing attack\n");
 	printf("5. Stop Physhing attack\n");
 	printf("6. set up YOUTUBE Physhing attack\n");
-	printf("7. TCP COMMAND")
+	printf("7. PACKET CAPTURE COMMAND")
 	scanf("%d",&option);
 	
 	
