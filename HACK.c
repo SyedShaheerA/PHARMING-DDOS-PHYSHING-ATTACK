@@ -57,5 +57,5 @@ int main(int args)
 		system("tshark -i eth0");
 
 	}
-	printf("hello world");
+
 }
