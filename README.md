@@ -1,4 +1,4 @@
-# PHYSHING_ATTACK
+# pharming Attack
 This is a demo for Phishing attack using C
 
 TO RUN THIS CODE YOU MUST FIRST do
